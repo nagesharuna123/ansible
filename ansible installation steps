@@ -1,0 +1,49 @@
+Ansible Master Setup (this is Amazon-linux)
+--------------------
+sudo amazon-linux-extras install epel -y
+
+  sudo yum repolist
+
+   sudo yum-config-manager --enable epel
+
+    sudo amazon-linux-extras disable ansible2
+
+    sudo yum --enablerepo epel install ansible
+
+    ansible --version
+
+    
+      vi /etc/ansible/hosts
+   
+     vi /etc/ansible/ansible.cfg
+
+     adduser ansible
+     passwd ansible
+     su - ansible
+     visudo
+     su - ansible
+     vi /etc/ssh/sshd_config
+     service sshd restart
+   su - ansible
+   
+
+Node setup
+----------
+
+    1  yum update -y
+    2  adduser ansible
+    3  passwd ansible
+    4  su - ansible
+    5  visudo (perform this as a root)
+    6  su - ansible
+    7  vi /etc/ssh/sshd_config
+    8  service sshd restart
+    9  su - ansible
+----------
+
+key-gen in master as ansible user
+
+after generating key
+
+ssh-copy-id username@ip
+
